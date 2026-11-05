@@ -1,0 +1,33 @@
+{
+  "name": "inkmind-notes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "网页版手写笔记 + AI 康奈尔笔记（语音识别 + Claude Opus 5.5）",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"node --watch server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "preview": "vite build && node server/index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
+    "@huggingface/transformers": "^4.3.2",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "idb-keyval": "^6.3.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.69.0",
+    "lxgw-wenkai-webfont": "^1.7.0",
+    "opencc-js": "^1.4.2",
+    "perfect-freehand": "^1.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "roughjs": "^4.6.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "concurrently": "^10.0.6",
+    "vite": "^8.3.6"
+  }
+}
